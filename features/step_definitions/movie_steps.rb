@@ -47,7 +47,6 @@ Then(/^I should (not )?see the following movies: (.*)$/) do |no, movie_list|
 end
 
 Then(/^I should see all the movies$/) do
-  puts page.html
   rows = page.all('#movies > div[id^="movie_"]').count
   expect(rows).to eq(Movie.count)
 end
